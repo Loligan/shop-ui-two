@@ -16,7 +16,7 @@
         <a class="item">Browse</a>
         <a class="item">Submit</a>
         <div class="right menu">
-<!--TODO------------------------------------------------------------------->
+            <!--TODO------------------------------------------------------------------->
             <div class="ui dropdown item">
                 <i class="icon shopping bag"></i> 0 items in cart
                 <i class="dropdown basketcart icon"></i>
@@ -37,11 +37,14 @@
                                 <i class="search icon"></i>
                             </div>
                         </div>
+                        <div class="closedropdown">
+                            <button>asdasd</button>
+                        </div>
                     </div>
                     <!--<a class="item">English</a>-->
                 </div>
             </div>
-<!------------------------------------------------------------------------------------------>
+            <!------------------------------------------------------------------------------------------>
             <a class="item" id="signup">Sign Up</a>
         </div>
     </div>
@@ -361,8 +364,12 @@
 
     $('.dropdown')
         .dropdown({
-            action: 'hide'
+            action: 'show'
         })
+
+//        .dropdown({
+//            action: 'hide'
+//        })
     ;
 </script>
 </body>
