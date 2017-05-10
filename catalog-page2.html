@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="semantic-ui/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui container">
+    <div class="ui menu">
+        <a class="item">Browse</a>
+        <a class="item">Submit</a>
+        <div class="right menu">
+            <a class="item" id="signup">Sign Up</a>
+            <a class="item">Help</a>
+        </div>
+    </div>
+
+    <div class="ui rail">
+        <div class="ui sticky">
+            <div class="ui vertical menu">
+                <div class="item">
+                    <div class="ui input"><input type="text" placeholder="Search..."></div>
+                </div>
+                <div class="item">
+                    SETTING
+                    <div class="menu">
+                        <!--<a class="active item">Search</a>-->
+                        <div class="item">
+                            <div class="ui input">
+                                <div class="field">
+                                    <label>PRICE (BYN)</label>
+                                    <input  type="number">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="ui input">
+                                <div class="field">
+                                    <label>OPERATION SYSTEM</label>
+                                    <div class="inline field">
+                                        <div class="ui checkbox">
+                                            <input type="checkbox" tabindex="0" class="hidden">
+                                            <label>iOS 8</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="inline field">
+                                        <div class="ui checkbox">
+                                            <input type="checkbox" tabindex="0" class="hidden">
+                                            <label>iOS 7</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="inline field">
+                                        <div class="ui checkbox">
+                                            <input type="checkbox" tabindex="0" class="hidden">
+                                            <label>Android 5</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="inline field">
+                                        <div class="ui checkbox">
+                                            <input type="checkbox" tabindex="0" class="hidden">
+                                            <label>Android 7</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="item">
+                        <div class="ui input">
+                            <button class="ui fluid basic button">
+                                Filtered
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--<a class="item">-->
+                <!--Messages-->
+                <!--</a>-->
+            </div>
+        </div>
+    </div>
+    <div id="context">
+        <!-- Long flowing text content !-->
+    </div>
+
+
+</div>
+
+<!--MODAL-->
+<div class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+        Sign up
+    </div>
+    <div class="image content">
+        <!--<div class="ui medium image">-->
+            <!--<img src="semantic-ui/image.png">-->
+        <!--</div>-->
+        <div class="description">
+            <div class="ui two column middle aligned very relaxed stackable grid">
+                <div class="column">
+                    <div class="ui form">
+                        <div class="field">
+                            <label>Username</label>
+                            <div class="ui left icon input">
+                                <input type="text" placeholder="Username">
+                                <i class="user icon"></i>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Password</label>
+                            <div class="ui left icon input">
+                                <input type="password" placeholder="Password">
+                                <i class="lock icon"></i>
+                            </div>
+                        </div>
+                        <div class="ui blue submit button">Login</div>
+                    </div>
+                </div>
+                <div class="ui vertical divider">
+                </div>
+                <div class="left aligned column">
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="field">
+                                <label>Username</label>
+                                <div class="ui left icon input">
+                                    <input type="text" placeholder="Username">
+                                    <i class="user icon"></i>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Email</label>
+                                <div class="ui left icon input">
+                                    <input type="email" placeholder="Email">
+                                    <i class="mail icon"></i>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Password</label>
+                                <div class="ui left icon input">
+                                    <input type="password" placeholder="Password">
+                                    <i class="lock icon"></i>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Re-Password</label>
+                                <div class="ui left icon input">
+                                    <input type="password" placeholder="Re-password">
+                                    <i class="lock icon"></i>
+                                </div>
+                            </div>
+                            <div class="ui blue submit button">Register</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui black deny button">
+            Not now
+        </div>
+        <!--<div class="ui positive right labeled icon button">-->
+            <!--Yep, that's me-->
+            <!--<i class="checkmark icon"></i>-->
+        <!--</div>-->
+    </div>
+</div>
+<script>
+
+$('#signup').click(function () {
+    $('.ui.modal')
+        .modal('show')
+    ;
+});
+
+
+    $('.ui.checkbox')
+        .checkbox()
+    ;
+$('.ui.sticky')
+    .sticky({
+        context: '#context'
+    })
+;
+</script>
+</body>
+</html>
