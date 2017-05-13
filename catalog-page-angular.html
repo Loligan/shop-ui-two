@@ -13,7 +13,7 @@
     <script src="scope.js"></script>
 </head>
 <body>
-<div class="ui container" ng-app="itemsApp" ng-controller="itemsCtrl" >
+<div class="ui container" ng-app="itemsApp" ng-controller="itemsCtrl">
     <div class="ui menu">
         <a class="item">Browse</a>
         <a class="item">Submit</a>
@@ -31,7 +31,7 @@
                         </a>
                         <a class="item">
                             <div class="ui label">1</div>
-                            Trash                        Updates
+                            Trash Updates
                         </a>
                         <div class="item">
                             <div class="ui icon input">
@@ -125,7 +125,8 @@
             </div>
         </div>
         <div class="twelve wide column">
-            <div class="ui segment">
+            <div class="ui dimmable dimmed blurring segment">
+                <div class="ui inverted dimmer"></div>
                 <!--!!!!!!!!!!!!!!!!!-->
                 <tbody>
                 <div class="ui divided items" ng-repeat="item in items">
@@ -154,19 +155,17 @@
                             </div>
                         </div>
                     </div>
-
-
-
-                <!--!!!!!!!!!!!!!!1-->
-            </div>
-            </tbody>
+                    <!--!!!!!!!!!!!!!!1-->
+                </div>
+                </tbody>
                 <div class="item">
                     <button class="fluid ui button">Get more</button>
                 </div>
             </div>
-
         </div>
+
     </div>
+</div>
 </div>
 
 <!--MODAL-->
@@ -269,9 +268,10 @@
             action: 'show'
         })
 
-//        .dropdown({
-//            action: 'hide'
-//        })
+    $('.segment').dimmer('show');
+    //        .dropdown({
+    //            action: 'hide'
+    //        })
     ;
 </script>
 </body>

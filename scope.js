@@ -30,7 +30,10 @@ angular.module('itemsApp').controller('itemsCtrl', function ($scope) {
             img: 'https://content2.onliner.by/catalog/device/main/34920f060b4fd8e8b9569f8c0723b747.jpeg'
         }
     ];
+
+    $('.segment').dimmer('hide');
 });
+
 
 
 
