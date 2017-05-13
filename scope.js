@@ -6,6 +6,7 @@ angular.module('itemsApp').controller('itemsCtrl', function ($scope) {
             name: 'iPhone 7',
             price: 100,
             discount: true,
+            discount_value: 20,
             limited: false,
             desc: "",
             img: 'https://content2.onliner.by/catalog/device/main/f8d7fac0fe59ead77f5199454a6e8c4a.jpeg'
