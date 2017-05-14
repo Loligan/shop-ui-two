@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
-    <script src="angular-1.6.4/angular.min.js"></script>
+    <script src="angular.min.js"></script>
     <script
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -130,7 +130,7 @@
                 <!--!!!!!!!!!!!!!!!!!-->
                 <tbody>
                 <div class="ui divided items" ng-repeat="item in items ">
-                    <div class="item">
+                    <div class="item" ng-cloak>
                         <div class="ui small fluid image">
                             <div class="ui green ribbon label" ng-if="item.discount==true">
                                 <i class="percent icon"></i> {{item.discount_value}}
