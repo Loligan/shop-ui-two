@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
+    <script src="angular.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="semantic-ui/semantic.min.js"></script>
+    <script src="scope.js"></script>
+</head>
+<body>
+<div class="ui container" ng-app="itemsApp" ng-controller="itemsCtrl">
+    <div class="ui menu">
+        <a class="browse  item">
+            Go home
+            <i class="home icon"></i>
+        </a>
+        <div class="right menu">
+            <!--TODO---------------------------CART---------------------------------------->
+            <div class="ui item">
+                <i class="icon user"></i> Admin panel
+            </div>
+
+        </div>
+
+    </div>
+    <div class="ui grid">
+        <div class="four wide column ">
+            <div class="ui pointing vertical menu">
+                <a class="item">
+                    Settings
+                </a>
+                <div class="item">
+                    <b>Users</b>
+                    <div class="menu">
+                        <a class="item">List users</a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <b>Catalog</b>
+                    <div class="menu">
+                        <a class="item">Categories</a>
+                        <a class="item">Items</a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <b>Account</b>
+                    <div class="menu">
+                        <a class="item">Edit account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="twelve wide column">
+            <div class="ui segment">
+                <!--TABLE-->
+                <table class="ui small selectable  celled table">
+                    <div class="ui celled relaxed list">
+                        <button class="ui basic button" id="add_category">
+                            <i class="icon plus"></i>
+                            Add new category
+                        </button>
+                        <thead>
+                        <tr>
+
+                            </th>
+                            <th class="three wide">Name</th>
+                            <th class="three wide">Count items</th>
+                            <th class="six wide">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Name category</td>
+                            <td>Count items</td>
+                            <td>
+                                <button class="ui tiny basic button details_category">
+                                    <i class="icon unhide "></i>
+                                    Details
+                                </button>
+                                <button class="ui tiny basic button edit_category">
+                                    <i class="icon write"></i>
+                                    Edit
+                                </button>
+                                <button class="ui tiny basic button">
+                                    <i class="icon block layout"></i>
+                                    All items
+                                </button>
+                                <button class="ui tiny basic button del_category">
+                                    <i class="icon trash"></i>
+                                    Delete
+                                </button>
+
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </div>
+                </table>
+                <!--TABLE END-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--ACCEPTED DELETE CATEGORY-->
+
+<div class="ui basic modal category_delete_modal">
+    <div class="ui icon header">
+        <i class="archive icon"></i>
+        Delete category "Name category"
+    </div>
+    <div class="content">
+        <p>Are you sure you want to delete a category?</p>
+    </div>
+    <div class="actions">
+        <div class="ui red basic cancel inverted button">
+            <i class="remove icon"></i>
+            No
+        </div>
+        <div class="ui green ok inverted button">
+            <i class="checkmark icon"></i>
+            Yes
+        </div>
+    </div>
+</div>
+<!--END ACCEPTED DELETE CATEGORY-->
+
+<!--EDIT CATEGORY MODAL-->
+<div class="ui modal edit_category_modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Add new category
+        </div>
+        <div class="image content">
+            <div class="description">
+                <div class="ui form">
+                    <div class="field">
+                        <label>Name category</label>
+                        <div class="ui left corner labeled input">
+                            <input type="text">
+                            <div class="ui left corner label">
+                                <i class="asterisk icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui grid">
+                        <div class="four wide column">
+                            <div class="field">
+                                <label>Name param</label>
+                                <div class="ui input">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="four wide column">
+                            <div class="ui form">
+                                <div class="field">
+                                    <label>Type value</label>
+                                </div>
+                                <div class="inline fields">
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" name="frequency" checked="checked">
+                                            <label>Text</label>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" name="frequency">
+                                            <label>Number</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="three wide column">
+                            <div class="field">
+                                <label> Is main param</label>
+                            </div>
+                            <div class="ui slider checkbox">
+                                <input type="checkbox" name="newsletter">
+                                <label></label>
+                            </div>
+
+                        </div>
+                        <div class="three wide column">
+                            <button class="ui basic button">
+                                <i class="icon plus"></i>
+                                Add param
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <table class="ui celled striped table">
+                    <thead>
+                    <tr>
+                        <th >
+                            Name repository
+                        </th>
+                        <th>
+                            Type value
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="collapsing">
+                            <i class="circle icon"></i> Manufacturer
+                        </td>
+                        <td >Text</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="circle thin icon"></i> RAM
+                        </td>
+                        <td >Number</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui white deny button">
+                Close
+            </div>
+            <div class="ui positive right labeled icon button">
+                Add
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+<!--END EDIT CATEGORY MODAL-->
+
+<!--ADD CATEGORY MODAL-->
+<div class="ui modal add_category_modal">
+    <i class="close icon"></i>
+    <div class="header">
+        Add new category
+    </div>
+    <div class="image content">
+        <div class="description">
+            <div class="ui form">
+                <div class="field">
+                    <label>Name category</label>
+                    <div class="ui left corner labeled input">
+                        <input type="text">
+                        <div class="ui left corner label">
+                            <i class="asterisk icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui grid">
+                    <div class="four wide column">
+                        <div class="field">
+                            <label>Name param</label>
+                            <div class="ui input">
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="four wide column">
+                        <div class="ui form">
+                            <div class="field">
+                                <label>Type value</label>
+                            </div>
+                            <div class="inline fields">
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="frequency" checked="checked">
+                                        <label>Text</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="frequency">
+                                        <label>Number</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="three wide column">
+                        <div class="field">
+                            <label> Is main param</label>
+                        </div>
+                        <div class="ui slider checkbox">
+                            <input type="checkbox" name="newsletter">
+                            <label></label>
+                        </div>
+
+                    </div>
+                    <div class="three wide column">
+                        <button class="ui basic button">
+                            <i class="icon plus"></i>
+                            Add param
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <table class="ui celled striped table">
+                <thead>
+                <tr>
+                    <th >
+                        Name repository
+                    </th>
+                    <th>
+                        Type value
+                    </th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="collapsing">
+                        <i class="circle icon"></i> Manufacturer
+                    </td>
+                    <td >Text</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="circle thin icon"></i> RAM
+                    </td>
+                    <td >Number</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui white deny button">
+            Close
+        </div>
+        <div class="ui positive right labeled icon button">
+            Add
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
+<!--END ADD CATEGORY MODAL-->
+
+<!--DETAILS CATEGORY MODAL-->
+<div class="ui modal details_category_modal">
+    <i class="close icon"></i>
+    <div class="header">
+        Details category "Name cateogry"
+    </div>
+    <div class="image content">
+        <div class="description">
+            <div class="ui form">
+                <div class="field">
+                    <div class="ui left corner labeled input">
+                        <input type="text">
+                        <div class="ui left corner label">
+                            <i class="asterisk icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui white deny button">
+            Close
+        </div>
+        <div class="ui positive right labeled icon button">
+            Add
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
+<!--END DETAILS CATEGORY MODAL-->
+
+<script>
+    $('.del_category').click(function () {
+
+        $('.ui.basic.modal.category_delete_modal')
+            .modal({
+                blurring: true
+            })
+            .modal('show')
+        ;
+    })
+
+    $('.edit_category').click(function () {
+        $('.ui.modal.edit_category_modal')
+            .modal({
+                blurring: true
+            })
+            .modal('show')
+        ;
+    })
+    $('#add_category').click(function () {
+        $('.ui.modal.add_category_modal')
+            .modal({
+                blurring: true
+            })
+            .modal('show')
+        ;
+    })
+
+    $('.details_category').click(function () {
+        $('.ui.modal.details_category_modal')
+            .modal({
+                blurring: true
+            })
+            .modal('show')
+        ;
+    })
+</script>
+
+
+</body>
+</html>
